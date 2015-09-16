@@ -1,0 +1,8 @@
+<apex:page controller="Demo1"
+    contentType="application/x-JavaScript; charset=utf-8"
+    showHeader="false"
+    standardStylesheets="false"
+    sidebar="false"
+    action="{!makeSOAPDemoCallout}">
+{!response}
+</apex:page>

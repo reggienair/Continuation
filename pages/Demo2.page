@@ -1,0 +1,43 @@
+<apex:page controller="Demo2">
+<apex:sectionHeader title="Apex Asynchronous Callout Framework – Continuation" subtitle="Demo2"/>
+	<apex:form >
+		<apex:pageBlock title="Chained Callout" id="PageSection">
+			<apex:pageBlockSection title="Demo2: Request" id="RequestSection">
+
+				<apex:commandButton action="{!makeSOAPDemoCallout}"
+					rerender="PageSection" status="pageStatus"
+					value="Call Continuation Web Service" />
+
+				<apex:actionStatus id="pageStatus">
+					<apex:facet name="start">
+						<apex:outputPanel >
+							<img src="/img/loading32.gif" width="30" height="30" />
+							<apex:outputLabel value="Waiting for callout response..." />
+						</apex:outputPanel>
+					</apex:facet>
+				</apex:actionStatus>
+				<apex:outputText value="Callout Type" />
+				<apex:outputText value="{!calloutType}" />
+				<apex:outputText value="Web Service" />
+				<apex:outputText value="{!service}" />
+				<apex:outputText value="Latency" />
+				<apex:outputText value="{!latency} (Milliseconds)" />
+				<apex:outputText value="Response Size" />
+				<apex:outputText value="{!responseSize} (bytes)" />
+				<apex:outputText value="Service Response Content Details" />
+				<apex:outputText value="{!serviceResult}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Demo2: Responses" id="PBSection">
+				<apex:outputText value="Account ID" />
+				<apex:outputText value="{!accountId}" />
+				<apex:outputText value="Contact ID" />
+				<apex:outputText value="{!contactId}" />
+				<apex:outputText value="Response XML-1" />
+				<apex:outputText value="{!response1}" />
+				<apex:outputText value="Response XML-2" />
+				<apex:outputText value="{!response2}" />
+			</apex:pageBlockSection>
+
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>
